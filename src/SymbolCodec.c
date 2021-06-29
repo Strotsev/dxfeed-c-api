@@ -325,6 +325,7 @@ int dx_codec_read_symbol (void* bicc, dxf_char_t* buffer, int buffer_length, OUT
 			CHECKED_CALL_2(dx_read_compact_int, bicc, &tmp_flags);
 			*mru_event_flags = (dxf_event_flags_t)tmp_flags;
 			*flags = *mru_event_flags;
+			wprintf(L"--- new flags: 0x%X ---\n", *flags);
 			event_flags_bytes = dx_get_in_buffer_position(bicc) - event_flags_pos;
 			continue; // read next byte
 		}
